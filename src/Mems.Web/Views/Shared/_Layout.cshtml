@@ -46,6 +46,7 @@
             @if (User.IsInRole(AdminScope.SuperRole)) { <a asp-area="Admin" asp-controller="Municipalities" asp-action="Index">Municipalities</a> }
             <a asp-area="Admin" asp-controller="Positions" asp-action="Index">Positions</a>
             <a asp-area="Admin" asp-controller="Candidates" asp-action="Index">Candidates</a>
+            <a asp-area="" asp-controller="Account" asp-action="ChangePassword">Change password</a>
         </nav>
     }
     @if (TempData["Notice"] is string notice) { <div class="alert alert-info no-print" role="status">@notice</div> }

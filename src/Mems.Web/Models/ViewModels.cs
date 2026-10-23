@@ -75,3 +75,15 @@ public class LoginForm
 
 /// <summary>Contains counts already restricted to the administrator's permitted data.</summary>
 public record DashboardViewModel(int Municipalities, int Positions, int Candidates);
+
+/// <summary>Validates a password change for the signed-in administrator.</summary>
+public class ChangePasswordForm
+{
+    [Required, DataType(DataType.Password), Display(Name = "Current Password")]
+    public string CurrentPassword { get; set; } = "";
+    [Required, DataType(DataType.Password), Display(Name = "New Password")]
+    public string NewPassword { get; set; } = "";
+    [Required, DataType(DataType.Password), Display(Name = "Confirm New Password")]
+    [Compare(nameof(NewPassword), ErrorMessage = "The new password and confirmation do not match.")]
+    public string ConfirmNewPassword { get; set; } = "";
+}
